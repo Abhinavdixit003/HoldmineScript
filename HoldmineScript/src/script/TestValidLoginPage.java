@@ -3,6 +3,7 @@ package script;
 import Test.HomePage.HomePage;
 import Test.LogIn.LoginPage;
 import generics.BaseTest;
+import generics.FWUtils;
 
 public class TestValidLoginPage extends BaseTest{
 		
@@ -17,12 +18,14 @@ public class TestValidLoginPage extends BaseTest{
 			
 			openBrowser("chrome");
 			HomePage hp = new HomePage(driver);
-			hp.clickOnLoginBTN();
+			hp.clickOnLoginButton();
 			
 			LoginPage lp = new LoginPage(driver);
 			lp.setUsername(un);
 			lp.setPassword(pw);
 			lp.clickOnLoginBTN();
+			
+			//FWUtils.verifyPageTitle(driver, "");
 			
 		/*	EnterTimeTrackPage etp = new EnterTimeTrackPage(driver);
 			FWUtils.verifyPageTitle(driver,expectedTitleETP);
